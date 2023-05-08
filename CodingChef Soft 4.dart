@@ -1,46 +1,52 @@
 import 'package:flutter/material.dart';
+// add this line to your dependencies
+// fluttertoast: ^8.2.1
+import 'package:fluttertoast/fluttertoast.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  static const String _title = 'CodingChef Soft 4';
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: _title,
-      home: Scaffold(
-        appBar: AppBar(title: const Text(_title)),
-        body: const Center(
-          child: MyStatelessWidget(),
+      title: 'AppBar',
+      home: MyPage(),
+      theme: ThemeData(primarySwatch: Colors.blue),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class MyPage extends StatelessWidget {
+  const MyPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Toast Message Title'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            flutterToast();
+          },
+          child: Text('Toast FlatButton'),
         ),
       ),
     );
   }
 }
 
-class MyStatelessWidget extends StatelessWidget {
-  const MyStatelessWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      child: const Text('Show Snackbar'),
-      onPressed: () {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: const Text('Awesome Snackbar!'),
-            action: SnackBarAction(
-              label: 'Action',
-              onPressed: () {
-                // Code to execute.
-              },
-            ),
-          ),
-        );
-      },
-    );
-  }
+void flutterToast() {
+  Fluttertoast.showToast(
+    msg: 'Flutter Toast Message',
+    gravity: ToastGravity.BOTTOM,
+    backgroundColor: Colors.redAccent,
+    fontSize: 15,
+    toastLength: Toast.LENGTH_SHORT,
+  );
 }
