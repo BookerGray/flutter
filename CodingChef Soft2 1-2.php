@@ -8,43 +8,43 @@ class OnBoardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IntroductionScreen(
-      done: const Text('done'),
-      onDone: () {
+      done: Text('done'),
+      onDone: (){
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const MyPage()),
+          MaterialPageRoute(builder: (context) => MyPage()),
         );
       },
       curve: Curves.bounceInOut,
-      next: const Icon(Icons.arrow_forward),
+      next: Icon(Icons.arrow_forward),
       showSkipButton: true,
-      skip: const Text('skip'),
+      skip: Text('skip'),
       dotsDecorator: DotsDecorator(
         color: Colors.cyan,
         size: Size(10,10),
         activeSize: Size(32,10),
         activeShape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24)
+          borderRadius: BorderRadius.circular(24)
         ),
         activeColor: Colors.red,
       ),
       pages: [
         PageViewModel(
-            title: 'Welcome to my app',
-            body: 'This is the first page',
-            image: Image.asset('images/one.png'),
-            decoration: getPageDecoration()
+          title: 'Welcome to my app',
+          body: 'This is the first page',
+          image: Image.asset('images/CodingChef Soft2 one.png'),
+          decoration: getPageDecoration(),
         ),
         PageViewModel(
-            title: 'Welcome to my app',
-            body: 'This is the second page',
-            image: Image.asset('images/two.png'),
-            decoration: getPageDecoration()
+          title: 'Welcome to my app',
+          body: 'This is the second page',
+          image: Image.asset('images/CodingChef Soft2 two.png'),
+          decoration: getPageDecoration(),
         ),
         PageViewModel(
-            title: 'Welcome to my app',
-            body: 'This is the third page',
-            image: Image.asset('images/three.png'),
-            decoration: getPageDecoration()
+          title: 'Welcome to my app',
+          body: 'This is the third page',
+          image: Image.asset('images/CodingChef Soft2 three.png'),
+          decoration: getPageDecoration(),
         ),
       ],
     );
@@ -52,16 +52,16 @@ class OnBoardingPage extends StatelessWidget {
 
   PageDecoration getPageDecoration(){
     return const PageDecoration(
-        titleTextStyle: TextStyle(
-            fontSize: 28,
-            fontWeight: FontWeight.bold
-        ),
-        bodyTextStyle: TextStyle(
-            fontSize: 18,
-            color: Colors.blue
-        ),
-        imagePadding: EdgeInsets.only(top: 40),
-        pageColor: Colors.orange
+      titleTextStyle: TextStyle(
+        fontSize: 28,
+        fontWeight: FontWeight.bold,
+      ),
+      bodyTextStyle: TextStyle(
+        fontSize: 28,
+        color: Colors.blue,
+      ),
+      imagePadding: EdgeInsets.only(top: 40),
+      pageColor: Colors.orange,
     );
   }
 }
