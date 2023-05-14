@@ -1,3 +1,5 @@
+// model.dart
+
 class Animal{
   final String name;
   final String imgPath;

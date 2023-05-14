@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 import 'package:untitled1/model.dart';
 
+// animal_page.dart
+
 class AnimalPage extends StatefulWidget {
   const AnimalPage({Key? key, required this.animal}) : super(key: key);
 

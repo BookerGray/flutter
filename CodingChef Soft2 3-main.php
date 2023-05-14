@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled1/animal_page.dart';
 import 'package:untitled1/model.dart';
 
+// main.dart
 // https://pub.dev/packages/like_button
 
 void main() {
