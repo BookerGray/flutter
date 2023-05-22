@@ -131,7 +131,8 @@ class _ListViewPageState extends State<ListViewPage> {
       body: ListView.builder(
         itemCount: titleList.length,
         itemBuilder: (context, index) {
-          return InkWell( // https://api.flutter.dev/flutter/material/InkWell-class.html
+          // https://api.flutter.dev/flutter/material/InkWell-class.html
+          return InkWell( 
             onTap: () {
               debugPrint(titleList[index]);
               showPopup(context, titleList[index], imageList[index],
